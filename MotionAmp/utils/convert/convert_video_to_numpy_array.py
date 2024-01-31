@@ -1,6 +1,6 @@
 import cv2
 import numpy as np
-
+import matplotlib.pyplot as plt
 def convert_video_to_numpy_array(video) -> np.ndarray:
     """
     Load a video file and convert it into a NumPy array of frames.
@@ -29,6 +29,9 @@ def convert_video_to_numpy_array(video) -> np.ndarray:
             break
 
         # Append each frame to the frames list
+        
+        #convert frame to rgb
+        
         frames.append(frame)
 
     # Release the VideoCapture object
@@ -39,4 +42,6 @@ def convert_video_to_numpy_array(video) -> np.ndarray:
 
     #set the type of the array to float32
     frames_array = frames_array.astype(np.float32)
+    
+
     return frames_array

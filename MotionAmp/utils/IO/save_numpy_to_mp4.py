@@ -18,6 +18,7 @@ def save_numpy_to_mp4(output_path, frames, fps):
 
     # Write the frames to the video file
     for frame in frames:
+        
         video.write(frame)
 
     # Release the VideoWriter

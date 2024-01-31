@@ -34,7 +34,7 @@ def eulerian_amplification(videopath:str,  band:list, factor:int =[0.1,0.1,0.1],
 
     # Convert the video to a NumPy array np.array([frame, height, width, channel])
     processed_video_array = convert_video_to_numpy_array(video)
-
+    
     # Make a copy of the original video array
     original_video_array = processed_video_array.copy()
 
@@ -81,7 +81,7 @@ def eulerian_amplification(videopath:str,  band:list, factor:int =[0.1,0.1,0.1],
 
     # Convert to integers for saving so that video is not clipped to 0-1 range because of float
     original_video_array = original_video_array.astype(np.uint8)
-
+    
     # Save the amplified video
     workdir = os.getcwd()
     save_numpy_to_mp4(workdir + "/output.mp4", original_video_array, framerate)

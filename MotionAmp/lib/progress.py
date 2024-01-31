@@ -6,6 +6,7 @@ import os
 
 
 
+
 #progress bar
 class progress():
     
@@ -45,7 +46,8 @@ class progress():
             
             self.count += 1
             
-            percentage = self.count/self.length * 100
+            percentage = math.floor(self.count/self.length * 100)
+            
             
             #get length of text before progress bar
             text_length = len(self.name) + len(str(self.length))

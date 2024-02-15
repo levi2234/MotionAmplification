@@ -6,3 +6,4 @@ The algorithm works by amplifying the motion in a video. It does this by first d
 
 
 [output.webm](https://github.com/levi2234/MotionAmplification/assets/10477282/be585823-e686-4852-99ee-2f2abe0131f4)
+[face_result.webm](https://github.com/levi2234/MotionAmplification/assets/10477282/c1bc3f53-1228-4c1f-99d9-285952b6b47b)

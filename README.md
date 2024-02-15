@@ -1,10 +1,8 @@
 # MotionAmplification
 
-## Logs
+This is a Python implementation of the Motion Amplification algorithm. The algorithm is based on the paper "Eulerian Video Magnification for Revealing Subtle Changes in the World" by MIT researchers Hao-Yu Wu, Michael Rubinstein, Eugene Shih, John Guttag, Frédo Durand, and William T. Freeman. The paper can be found [here](http://people.csail.mit.edu/mrub/*paprs*/vidmag.pdf).
 
-### 2021-01-20
-    The eulerian magnification is working, but the results are not great yet. The magnification is visible but the image is very noisy and not as smooth as the reference video from the original paper.
+The algorithm works by amplifying the motion in a video. It does this by first decomposing the video into its spatial and temporal components using a Laplacian pyramid. The temporal component is then amplified by a user-defined factor and added back to the spatial component. The resulting video is then reconstructed from the amplified spatial component.
 
-    I have started implementing the OF(optical flow in the lagrangian_amplification.py file. For now I chose to make use of the Lukas-Kanade method because it is claimed to work good with small motions which we aim for. 
-
-    The problem Now is that converting the original RGB image to grayscale results in a float value for the brightness of each pixel. The built in Lukas-Kande method however requires a unisigned 8-bit integer as input. Converting the float values to uint8 results in a loss of information. This is where I stand now
+#comparing the original and amplified video
+![Original](output.webm) ![Amplified](output.webm)

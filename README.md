@@ -25,5 +25,8 @@ video = eulerian_amplification('face_source.wmv', factor=factor, band=band, down
 
 # Technical details
 
-* **Step1**: The paper first decomposes the video into its spatial and temporal components using a Laplacian pyramid. Here however we use the Gaussian pyramid to decompose the video into a lower resolution version of the video.It applies a Gaussian filter to the input image to reduce high-frequency noise. This is achieved using a convolution operation with a Gaussian kernel. After smoothing, the image is downsampled by keeping only every alternate pixel in both rows and columns. This reduces the resolution of the image by a factor of 2. This process is repeated to obtain a series of images of decreasing resolution. The resulting images are called the Gaussian pyramid. 
+* **Step1**: The paper first decomposes the video into its spatial and temporal components using a Laplacian pyramid. Here however we use the Gaussian pyramid to decompose the video into a lower resolution version of the video.It applies a Gaussian filter to the input image to reduce high-frequency noise. This is achieved using a convolution operation with a Gaussian kernel. After smoothing, the image is downsampled by keeping only every alternate pixel in both rows and columns. This reduces the resolution of the image by a factor of 2. This process is repeated to obtain a series of images of decreasing resolution. The resulting images are called the Gaussian pyramid.
+
+* ![image](https://github.com/levi2234/MotionAmplification/assets/10477282/f8444ef1-afb2-4bea-8b17-e182c9477950)
+
 

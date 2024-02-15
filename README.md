@@ -6,5 +6,25 @@ The algorithm works by amplifying the motion in a video. It does this by first d
 
 #comparing the original and amplified video
 
-[face_result.webm](https://github.com/levi2234/MotionAmplification/assets/10477282/8e8be1b0-8e50-4046-b3a5-a5fed7c7ce48)
-[output.webm](https://github.com/levi2234/MotionAmplification/assets/10477282/c63b0ae3-4f03-4cab-9401-65a63a25cdc1)
+
+
+# How to use the code
+``` python
+from MotionAmp.motion_amplification import eulerian_amplification
+from MotionAmp.motion_amplification import lagrangian_amplification
+import time
+
+factor = [0, 70, 0] #amplication factor per color channel
+band = [0.4, 3] #bandpass filter what frequencies to amplify
+downsample_level = 3 #downsample the video to speed up the process and eliuminate high frequency noise
+
+video = eulerian_amplification('face_source.wmv', factor=factor, band=band, downsample_level=downsample_level)
+
+#result is stored under output.mp4 in the current directory
+```
+
+
+# Technical details
+
+* **Step1**: The paper first decomposes the video into its spatial and temporal components using a Laplacian pyramid. Here however we use the Gaussian pyramid to decompose the video into a lower resolution version of the video.It applies a Gaussian filter to the input image to reduce high-frequency noise. This is achieved using a convolution operation with a Gaussian kernel. After smoothing, the image is downsampled by keeping only every alternate pixel in both rows and columns. This reduces the resolution of the image by a factor of 2. This process is repeated to obtain a series of images of decreasing resolution. The resulting images are called the Gaussian pyramid. 
+
